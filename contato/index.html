@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Central de Ajuda – MegaMall</title>
+<link rel="stylesheet" href="../assets/css/contato.css">
+<script src="../assets/js/layout.js"></script></head>
+<body><main class="ajuda">
+
+<section class="ajuda-hero"><div class="container">
+  <h1>Central de Ajuda</h1>
+  <p>Como podemos ajudar?</p>
+  <div role="search" class="ajuda-busca">
+    <label for="busca-ajuda" class="sr-only">Buscar nas perguntas frequentes</label>
+    <input id="busca-ajuda" type="search" placeholder="Digite sua dúvida (ex.: prazo de entrega, Pix, troca)" autocomplete="off">
+  </div>
+</div></section>
+
+<section><div class="container">
+  <h2>Escolha um assunto</h2>
+  <div class="assuntos" role="group" aria-label="Assuntos">
+    <button type="button" class="assunto" data-cat="todas" aria-pressed="true"><span aria-hidden="true">📚</span>Todos</button>
+    <button type="button" class="assunto" data-cat="pedidos" aria-pressed="false"><span aria-hidden="true">📦</span>Pedidos</button>
+    <button type="button" class="assunto" data-cat="entrega" aria-pressed="false"><span aria-hidden="true">🚚</span>Entrega</button>
+    <button type="button" class="assunto" data-cat="pagamento" aria-pressed="false"><span aria-hidden="true">💳</span>Pagamento</button>
+    <button type="button" class="assunto" data-cat="troca" aria-pressed="false"><span aria-hidden="true">🔄</span>Troca e devolução</button>
+    <button type="button" class="assunto" data-cat="garantia" aria-pressed="false"><span aria-hidden="true">🛡️</span>Garantia</button>
+    <button type="button" class="assunto" data-cat="conta" aria-pressed="false"><span aria-hidden="true">👤</span>Minha conta</button>
+  </div>
+</div></section>
+
+<section class="alt"><div class="container">
+  <h2>Perguntas frequentes</h2>
+  <p id="faq-info" role="status"></p>
+  <div id="faq">
+    <details class="faq" data-cat="pedidos"><summary>Como acompanho meu pedido?</summary>
+      <p>Depois que o pagamento é aprovado, enviamos o código de rastreio para o seu e-mail. Com ele, você acompanha cada etapa da entrega no site da transportadora.</p></details>
+    <details class="faq" data-cat="pedidos"><summary>Posso cancelar um pedido?</summary>
+      <p>Sim, enquanto ele ainda não foi enviado. Fale com a gente pelo formulário abaixo informando o número do pedido.</p></details>
+    <details class="faq" data-cat="entrega"><summary>Qual é o prazo de entrega?</summary>
+      <p>De 2 a 10 dias úteis, dependendo do seu CEP. O prazo exato aparece no carrinho antes de você finalizar a compra.</p></details>
+    <details class="faq" data-cat="entrega"><summary>O frete é grátis?</summary>
+      <p>Sim, em compras acima de R$ 199 para todo o Brasil. Abaixo desse valor, o frete é calculado pelo CEP.</p></details>
+    <details class="faq" data-cat="entrega"><summary>Recebi o produto com a embalagem violada. O que fazer?</summary>
+      <p>O ideal é recusar o recebimento na hora da entrega e, em seguida, entrar em contato com a gente informando o número do pedido.</p></details>
+    <details class="faq" data-cat="pagamento"><summary>Quais são as formas de pagamento?</summary>
+      <p>Pix (com 5% de desconto), cartão de crédito em até 10x sem juros e boleto bancário.</p></details>
+    <details class="faq" data-cat="pagamento"><summary>Meu pagamento foi recusado. E agora?</summary>
+      <p>Confira os dados do cartão, o limite disponível e tente novamente. Se continuar, tente outro cartão ou pague com Pix.</p></details>
+    <details class="faq" data-cat="troca"><summary>Posso trocar ou devolver um produto?</summary>
+      <p>Sim. Você pode desistir da compra em até 7 dias após o recebimento (direito de arrependimento, art. 49 do Código de Defesa do Consumidor), e nossa política oferece troca em até 30 dias.</p></details>
+    <details class="faq" data-cat="garantia"><summary>Qual é a garantia dos produtos?</summary>
+      <p>Todos têm a garantia legal de 90 dias para produtos duráveis (art. 26 do Código de Defesa do Consumidor), além da garantia do fabricante, quando houver.</p></details>
+    <details class="faq" data-cat="conta"><summary>Como crio minha conta?</summary>
+      <p>Clique em "Entrar" no topo da página, informe seu e-mail e uma senha com pelo menos 6 caracteres.</p></details>
+  </div>
+</div></section>
+
+<section><div class="container">
+  <h2>Ainda precisa de ajuda? Fale com a gente</h2>
+  <p>Tenha o número do pedido em mãos para agilizar o atendimento.</p>
+  <div class="canais">
+    <article class="card canal"><span class="ic" aria-hidden="true">📞</span><h3>Telefone</h3>
+      <p><a href="tel:08000000000">0800 000 0000</a></p><p>Segunda a sexta, das 8h às 18h</p></article>
+    <article class="card canal"><span class="ic" aria-hidden="true">💬</span><h3>WhatsApp</h3>
+      <p><strong>(00) 00000-0000</strong></p><p>Segunda a sábado, das 8h às 20h</p></article>
+    <article class="card canal"><span class="ic" aria-hidden="true">✉️</span><h3>E-mail</h3>
+      <p><a href="mailto:atendimento@megamall.example">atendimento@megamall.example</a></p><p>Resposta em até 2 dias úteis</p></article>
+    <article class="card canal"><span class="ic" aria-hidden="true">📝</span><h3>Formulário</h3>
+      <p>Envie sua mensagem e receba um número de protocolo.</p><a class="btn" href="#formulario">Abrir formulário</a></article>
+  </div>
+</div></section>
+
+<section class="alt" id="formulario"><div class="container">
+  <h2>Formulário de atendimento</h2>
+  <form id="form-contato" class="form card form-atendimento" novalidate>
+    <label for="nome">Nome</label><input id="nome" autocomplete="name" required>
+    <label for="email">E-mail</label><input id="email" type="email" autocomplete="email" required>
+    <label for="assunto">Assunto</label>
+    <select id="assunto"><option>Pedidos e rastreio</option><option>Entrega</option><option>Pagamento</option><option>Troca e devolução</option><option>Garantia</option><option>Minha conta</option><option>Outro</option></select>
+    <label for="pedido">Número do pedido (opcional)</label><input id="pedido" inputmode="numeric" autocomplete="off">
+    <label for="msg">Mensagem</label><textarea id="msg" rows="5" required></textarea>
+    <p id="status" class="erro" role="alert"></p>
+    <button class="btn" type="submit">Enviar mensagem</button>
+  </form>
+  <div id="resultado" class="card resultado" role="status" tabindex="-1" hidden></div>
+</div></section>
+
+</main>
+<script src="../assets/js/catalogo.js"></script>
+<script src="../assets/js/contato.js"></script>
+</body></html>

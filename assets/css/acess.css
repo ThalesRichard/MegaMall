@@ -1,0 +1,59 @@
+/* ===== Acessibilidade: botão flutuante, painel e preferências ===== */
+[data-font="extra"]{--fs:175%}
+
+/* Botão lateral flutuante (canto direito) */
+.acess-btn{position:fixed;right:0;top:45%;z-index:1000;display:grid;place-items:center;
+  background:#FF6B00;color:#171717;border:3px solid #171717;border-right:0;border-radius:14px 0 0 14px;
+  padding:.7rem .55rem;cursor:pointer;box-shadow:-3px 3px 10px rgba(0,0,0,.35)}
+.acess-btn:hover{background:#FFB000}
+[data-theme="dark"] .acess-btn{border-color:#F5F5F5}
+.acess-btn:focus-visible{outline:4px solid #171717;outline-offset:2px;box-shadow:0 0 0 7px #fff}
+
+/* Painel */
+.acess-painel{position:fixed;right:.75rem;top:10%;z-index:1001;width:min(360px,calc(100vw - 1.5rem));max-height:80vh;overflow:auto;
+  background:var(--bg);color:var(--text);border:3px solid #FF6B00;border-radius:14px;padding:1rem;box-shadow:0 14px 40px rgba(0,0,0,.45)}
+.acess-painel[hidden]{display:none}
+.acess-topo{display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+.acess-painel h2{font-size:1.5rem;margin:0}
+.acess-painel h3{font-size:1.05rem;margin:1rem 0 .4rem}
+.acess-painel p,.acess-painel li{font-size:.95rem;margin:.4rem 0}
+.acess-linha{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.acess-grade{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.acess-atalhos{list-style:none;padding:0;margin:0}
+.acess-painel kbd{border:1px solid var(--border);border-radius:4px;padding:0 .35rem;font:inherit;font-weight:700}
+.acess-op,.acess-linha button,#acess-fechar{font:inherit;font-weight:700;padding:.55rem .6rem;border:2px solid var(--text);
+  border-radius:8px;background:var(--surface);color:var(--text);cursor:pointer}
+.acess-largo{display:block;width:100%;margin-bottom:.5rem}
+.acess-op[aria-pressed="true"]{background:#FF6B00;color:#171717;border-color:#FF6B00}
+.acess-op[aria-pressed="true"]::before{content:"✔ "}  /* não depende só da cor */
+
+/* VLibras: usamos o nosso botão, então escondemos o botão original do plugin */
+[vw-access-button]{display:none!important}
+
+/* ===== Preferências ===== */
+/* Alto contraste: fundo preto, texto branco, links e botões amarelos */
+[data-contraste]{--bg:#000;--surface:#000;--text:#fff;--link:#ff0;--border:#fff;--card:#000;--pessego:#000;--creme:#000}
+[data-contraste] *{background-image:none!important;box-shadow:none!important;text-shadow:none!important;color:#fff!important;border-color:#fff!important}
+[data-contraste] a{color:#ff0!important;text-decoration:underline!important}
+[data-contraste] .btn,[data-contraste] .selo,[data-contraste] [role=tab][aria-selected=true],
+[data-contraste] .acess-btn,[data-contraste] .acess-op[aria-pressed="true"]{background-color:#ff0!important;color:#000!important;border-color:#000!important}
+[data-contraste] input,[data-contraste] textarea,[data-contraste] select{background-color:#000!important;border:2px solid #fff!important}
+[data-contraste] :focus-visible{outline:4px solid #0ff!important}
+
+/* Espaçamento do texto (WCAG 1.4.12) */
+[data-espaco] *{line-height:1.8!important;letter-spacing:.12em!important;word-spacing:.16em!important}
+[data-espaco] p{margin-bottom:1.6em}
+
+/* Fonte legível (sem serifa, formas bem distintas) */
+[data-legivel],[data-legivel] *{font-family:Verdana,Arial,Helvetica,sans-serif!important}
+
+/* Destacar links */
+[data-links] a{text-decoration:underline!important;text-decoration-thickness:3px;text-underline-offset:3px;font-weight:800!important}
+
+/* Pausar animações e transições */
+[data-pausar] *,[data-pausar] *::before,[data-pausar] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+
+/* Cursor grande */
+[data-cursor],[data-cursor] *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24'%3E%3Cpath d='M4 2l16 9-7 2 4 8-3 1-4-8-6 5z' fill='black' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E") 4 2,auto!important}
+
+[data-contraste] .badge{background-color:#ff0!important;color:#000!important;border-color:#000!important}

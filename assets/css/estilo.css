@@ -1,0 +1,247 @@
+/* ===== Paleta (Parte A do relatório) ===== */
+:root{
+  --laranja:#FF6B00; --preto:#171717; --branco:#FFFFFF; --cinza:#F5F5F5;
+  --bg:var(--branco); --surface:var(--cinza); --text:var(--preto);
+  --primary:var(--laranja); --on-primary:var(--preto);
+  --link:#C24E00;            /* laranja escuro: ~4,8:1 sobre branco */
+  --border:#767676; --fs:100%;
+}
+[data-theme="dark"]{
+  --bg:var(--preto); --surface:#242424; --text:var(--cinza);
+  --link:var(--laranja); --border:#9a9a9a;
+}
+[data-font="grande"]{--fs:125%} [data-font="maior"]{--fs:150%}
+
+*{box-sizing:border-box}
+html{font-size:var(--fs)}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"Barlow",system-ui,sans-serif;line-height:1.55}
+h1,h2,h3{font-family:"Barlow Condensed","Barlow",sans-serif;line-height:1.15;margin:0 0 .5rem}
+h1{font-size:2.4rem} h2{font-size:1.8rem} h3{font-size:1.25rem}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+[data-theme="dark"] :focus-visible{outline-color:var(--laranja)}
+.skip{position:absolute;left:-999px;background:var(--primary);color:var(--on-primary);padding:.5rem 1rem}
+.skip:focus{left:0;z-index:99}
+.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+
+/* Botões */
+.btn{display:inline-block;border:2px solid var(--primary);background:var(--primary);color:var(--on-primary);
+  font:inherit;font-weight:700;padding:.6rem 1.2rem;border-radius:6px;cursor:pointer;text-decoration:none}
+.btn:hover{filter:brightness(.92)}
+
+/* Cabeçalho */
+.topo{background:var(--preto);color:var(--cinza)}
+.topo .container{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem;padding-block:.75rem}
+.logo{font-family:"Barlow Condensed",sans-serif;font-size:1.9rem;font-weight:800;color:var(--laranja);text-decoration:none}
+.busca{flex:1 1 260px;display:flex}
+.busca input{flex:1;padding:.55rem .8rem;border:2px solid var(--laranja);border-right:0;border-radius:6px 0 0 6px;font:inherit}
+.busca button{border-radius:0 6px 6px 0}
+.topo nav{display:flex;flex-wrap:wrap;gap:.25rem .9rem;align-items:center}
+.topo nav a{color:var(--cinza);text-decoration:none;font-weight:600}
+.topo nav a:hover{color:var(--laranja)}
+.topo .ferr{display:flex;gap:.4rem}
+.topo .ferr button{background:transparent;color:var(--cinza);border:1px solid var(--cinza);border-radius:6px;padding:.3rem .6rem;font:inherit;cursor:pointer}
+.topo .ferr button:hover{border-color:var(--laranja);color:var(--laranja)}
+
+/* Seções */
+main{min-height:60vh}
+section{padding:2rem 0}
+.alt{background:var(--surface)}
+.grade{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1rem}
+.alt .card{background:var(--bg)}
+.produto .img{aspect-ratio:4/3;background:var(--preto);color:var(--laranja);display:grid;place-items:center;font-size:3rem;border-radius:6px;margin-bottom:.75rem}
+.preco{font-family:"Barlow Condensed",sans-serif;font-size:1.7rem;font-weight:800}
+.preco small{font-size:.9rem;font-weight:500}
+
+/* Carrossel */
+.carrossel{background:var(--preto);color:var(--cinza)}
+.slide{display:none;padding:3rem 0;min-height:260px}
+.slide.ativo{display:block}
+.slide h2{font-size:3rem;color:var(--laranja)}
+.slide p{max-width:50ch;font-size:1.15rem}
+.ctrl{display:flex;gap:.5rem;justify-content:center;padding:.6rem}
+.ctrl button{background:transparent;color:var(--cinza);border:1px solid var(--cinza);border-radius:6px;padding:.3rem .8rem;font:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--laranja);color:var(--laranja)}
+
+/* Abas */
+[role=tablist]{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+[role=tab]{background:var(--surface);color:var(--text);border:2px solid var(--border);border-radius:999px;padding:.4rem 1rem;font:inherit;font-weight:600;cursor:pointer}
+[role=tab][aria-selected=true]{background:var(--primary);color:var(--on-primary);border-color:var(--primary)}
+
+/* Formulários */
+.form label{display:block;font-weight:600;margin:.8rem 0 .25rem}
+.form input,.form textarea{width:100%;padding:.6rem;border:2px solid var(--border);border-radius:6px;font:inherit;background:var(--bg);color:var(--text)}
+.erro{color:var(--link);font-weight:700;min-height:1.5rem}
+.login-box{max-width:420px;margin:3rem auto}
+
+/* Rodapé */
+.rodape{background:var(--preto);color:var(--cinza);padding:2rem 0;margin-top:2rem}
+.rodape .container{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.rodape a{color:var(--cinza)} .rodape a:hover{color:var(--laranja)}
+.rodape ul{list-style:none;padding:0;margin:0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ===== Páginas internas ===== */
+.btn-line{background:transparent;color:var(--text);border-color:var(--text)}
+.img{aspect-ratio:4/3;background:var(--preto);color:var(--laranja);display:grid;place-items:center;font-size:3rem;border-radius:6px;overflow:hidden}
+.img img{width:100%;height:100%;object-fit:cover}
+.produto .btn{margin:.5rem .4rem 0 0}
+.detalhe{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start}
+.detalhe .img{font-size:6rem}
+.item{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;margin-bottom:.75rem}
+.qtd{display:flex;gap:.5rem;align-items:center}
+.opcoes{display:flex;flex-wrap:wrap;gap:.5rem}
+
+/* ===== Visual v2: mais cor, profundidade e estilo de loja ===== */
+:root{--muted:#595959;--sombra:0 2px 10px rgba(0,0,0,.10)}
+[data-theme="dark"]{--muted:#bdbdbd;--sombra:none}
+.btn-escuro{background:var(--preto);border-color:var(--preto);color:var(--branco)}
+[data-theme="dark"] .btn-escuro{border-color:var(--cinza)}
+
+/* Faixa de promoção e menu de categorias */
+.promo{background:var(--laranja);color:var(--preto);font-weight:700;font-size:.9rem}
+.promo .container{display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem 2rem;padding-block:.4rem}
+.cats{background:#242424;border-top:1px solid #333}
+.cats .container{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;padding-block:.55rem}
+.cats a{color:var(--cinza);text-decoration:none;font-weight:600}
+.cats a:hover{color:var(--laranja)}
+
+/* Títulos com marca laranja */
+main h2{border-left:6px solid var(--laranja);padding-left:.6rem}
+.slide h2{border:0;padding:0}
+
+/* Banners do carrossel */
+.slide{min-height:320px;display:none;align-items:center;padding:2.5rem 0}
+.slide.ativo{display:flex}
+.slide>.container{width:100%}
+.banner{display:grid;grid-template-columns:1fr auto;align-items:center;gap:1rem}
+.arte{font-size:9rem;line-height:1;filter:drop-shadow(0 12px 18px rgba(0,0,0,.4))}
+.s1{background:repeating-linear-gradient(135deg,rgba(255,255,255,.10) 0 18px,transparent 18px 36px),linear-gradient(120deg,#FF6B00,#FF8A3D);color:var(--preto)}
+.s1 h2,.s1 p{color:var(--preto)}
+.s2{background:radial-gradient(circle at 85% 50%,rgba(255,107,0,.45),transparent 45%),linear-gradient(120deg,#171717 55%,#2b2b2b);color:var(--cinza)}
+.s3{background:repeating-linear-gradient(135deg,#171717 0 24px,#202020 24px 48px);color:var(--cinza)}
+.slide[style*="background-image"]{background-size:cover;background-position:center}
+@media (max-width:600px){.arte{display:none}.banner{grid-template-columns:1fr}.slide h2{font-size:2.2rem}}
+
+/* Cartões de produto */
+.card{box-shadow:var(--sombra)}
+.produto{border-top:4px solid var(--laranja);transition:transform .15s,box-shadow .15s}
+.produto:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(255,107,0,.28)}
+.img{position:relative}
+.selo{position:absolute;top:.5rem;left:.5rem;z-index:1;background:var(--laranja);color:var(--preto);font-size:1rem;font-weight:800;padding:.1rem .55rem;border-radius:4px}
+.de{margin:0;color:var(--muted)}
+
+/* Atalhos de categoria */
+.tiles{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.tile{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1.25rem 1rem;background:var(--surface);border:2px solid transparent;border-radius:12px;color:var(--text);text-decoration:none;font-weight:700;font-size:1.1rem;box-shadow:var(--sombra);transition:transform .15s,border-color .15s}
+.tile span{font-size:2.4rem;background:var(--preto);width:4.5rem;height:4.5rem;border-radius:50%;display:grid;place-items:center}
+.tile:hover{border-color:var(--laranja);transform:translateY(-3px)}
+
+/* Benefícios e faixa de convite */
+.beneficio{display:flex;gap:1rem;align-items:center;border-left:5px solid var(--laranja)}
+.beneficio .ic{font-size:2.2rem}
+.beneficio h3,.beneficio p{margin:0}
+.faixa{background:linear-gradient(100deg,#FF6B00,#FF8A3D);color:var(--preto);border-radius:12px;padding:2rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
+.faixa h2{color:var(--preto)}
+
+/* Rodapé */
+.rodape{border-top:5px solid var(--laranja)}
+.rodape .base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;border-top:1px solid #3a3a3a;margin-top:1.5rem;padding-top:1rem;font-size:.9rem}
+.rodape .base p{margin:0}
+.pag{display:flex;gap:.5rem}
+.pag span{border:1px solid var(--cinza);border-radius:4px;padding:.1rem .6rem;font-weight:700}
+.login-box{border-top:5px solid var(--laranja)}
+
+/* ===== Visual v3: mais cor (tons vizinhos do laranja) e mais vida ===== */
+:root{
+  --ambar:#FFB000;      /* amarelo-alaranjado */
+  --brasa:#D93A00;      /* laranja queimado */
+  --pessego:#FFF1E4;    /* laranja bem claro */
+  --creme:#FFF8F1;
+  --card:linear-gradient(180deg,#FFFFFF,#FFF6EE);
+}
+[data-theme="dark"]{
+  --surface:#26211D;    /* cinza escuro com leve tom quente */
+  --card:linear-gradient(180deg,#2D2723,#221E1B);
+}
+
+/* Botões com relevo */
+.btn{background:linear-gradient(180deg,#FF8A3D,#FF6B00);box-shadow:0 3px 0 #C24E00;transition:transform .1s,box-shadow .1s,filter .15s}
+.btn:hover{filter:brightness(1.05)}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 #C24E00}
+.btn-line{background:transparent;box-shadow:none}
+.btn-line:hover{background:var(--pessego);color:var(--preto);border-color:var(--laranja)}
+.btn-escuro{background:var(--preto);box-shadow:0 3px 0 #000}
+
+/* Topo */
+.promo{background:linear-gradient(90deg,#FF6B00,#FFA23A,#FF6B00)}
+.topo{background:linear-gradient(90deg,#171717 0%,#2B1A10 100%);border-bottom:3px solid var(--laranja)}
+.logo{text-shadow:0 0 18px rgba(255,107,0,.55)}
+.cats{background:linear-gradient(90deg,#2B2B2B,#3A2414);border-top:0}
+.cats a{padding:.1rem .6rem;border-radius:999px}
+.cats a:hover{background:var(--laranja);color:var(--preto)}
+
+/* Títulos e seções */
+main h2{border-image:linear-gradient(180deg,#FF6B00,#FFB000) 1}
+.alt{background:linear-gradient(180deg,var(--pessego),var(--creme))}
+[data-theme="dark"] .alt{background:var(--surface)}
+
+/* Banners */
+.s1{background:radial-gradient(circle at 90% 15%,rgba(255,200,60,.60),transparent 40%),repeating-linear-gradient(135deg,rgba(255,255,255,.10) 0 18px,transparent 18px 36px),linear-gradient(120deg,#FF6B00,#FF9A3D)}
+.s2{background:radial-gradient(circle at 85% 50%,rgba(255,107,0,.50),transparent 45%),radial-gradient(circle at 8% 95%,rgba(255,176,0,.28),transparent 35%),linear-gradient(120deg,#171717 55%,#2b2b2b)}
+.s3{background:radial-gradient(circle at 88% 40%,rgba(255,176,0,.45),transparent 42%),linear-gradient(120deg,#2A0F05,#5A1D05 60%,#8A2C00);color:var(--cinza)}
+.s3 h2{color:var(--ambar)}
+.ctrl{background:linear-gradient(90deg,#171717,#2B1A10)}
+
+/* Cartões de produto */
+.produto{background:var(--card);border:1px solid var(--border);border-top:0;position:relative;overflow:hidden}
+.produto::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,#FF6B00,#FFB000)}
+.produto{padding-top:1.4rem}
+.selo{background:linear-gradient(135deg,#FFB000,#FF6B00);box-shadow:0 2px 6px rgba(0,0,0,.35)}
+.preco{color:var(--link)}
+.produto .img{background:radial-gradient(circle at 50% 40%,#3A2414,#171717)}
+
+/* Categorias, benefícios e faixa */
+.tile{background:var(--card)}
+.tile span{box-shadow:0 0 0 3px var(--laranja)}
+.tile:hover{background:var(--pessego);color:var(--preto)}
+[data-theme="dark"] .tile:hover{background:#3A2414;color:var(--cinza)}
+.beneficio:nth-child(2){border-left-color:var(--ambar)}
+.beneficio:nth-child(3){border-left-color:var(--brasa)}
+.faixa{background:radial-gradient(circle at 95% 10%,rgba(255,220,100,.7),transparent 40%),linear-gradient(100deg,#FF6B00,#FF9A3D);box-shadow:0 8px 22px rgba(255,107,0,.35)}
+
+/* Abas */
+[role=tab]{transition:background .15s,border-color .15s}
+[role=tab]:hover{border-color:var(--laranja)}
+[role=tab][aria-selected=true]{background:linear-gradient(180deg,#FF8A3D,#FF6B00);box-shadow:0 2px 0 #C24E00}
+
+/* Rodapé e login */
+.rodape{background:linear-gradient(180deg,#171717,#0E0E0E);border-top:5px solid;border-image:linear-gradient(90deg,#FF6B00,#FFB000,#FF6B00) 1}
+.rodape h3{color:var(--laranja)}
+.login-box{box-shadow:0 14px 34px rgba(255,107,0,.22)}
+
+/* ===== Conta e carrinho no topo ===== */
+.sr-only{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.topo{position:relative}
+.conta{display:flex;align-items:center;gap:1.1rem;margin-left:auto}
+.conta-msg{display:flex;flex-direction:column;line-height:1.2}
+.conta-msg small{color:var(--cinza);font-size:.8rem}
+.conta-msg a{color:var(--cinza);font-weight:800;text-decoration:none}
+.conta-msg a:hover,.carrinho-link:hover{color:var(--laranja)}
+.carrinho-link{position:relative;display:grid;place-items:center;color:var(--cinza);padding:.35rem}
+.badge{position:absolute;top:-.2rem;right:-.45rem;box-sizing:content-box;min-width:1.2rem;height:1.2rem;padding:0 .25rem;
+  border-radius:999px;background:var(--laranja);color:var(--preto);border:2px solid var(--preto);
+  font-size:.8rem;font-weight:800;line-height:1.2rem;text-align:center}
+.badge[hidden]{display:none}
+.badge.pulo{animation:pulo .4s}
+@keyframes pulo{50%{transform:scale(1.6)}}
+@media (min-width:1600px){   /* telas largas: canto direito do cabeçalho */
+  .conta{position:absolute;right:2rem;top:50%;transform:translateY(-50%);margin:0}
+}
+
+/* Banners do carrossel com foto */
+.banner.foto{grid-template-columns:1.1fr 1fr}
+.arte-img{width:100%;height:260px;object-fit:cover;border-radius:14px;border:3px solid rgba(255,255,255,.25);box-shadow:0 12px 28px rgba(0,0,0,.45)}
+@media (max-width:600px){.banner.foto{grid-template-columns:1fr}.arte-img{height:180px}}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MegaMall – Ofertas</title>
+<script src="../assets/js/layout.js"></script></head>
+<body><main>
+
+<section class="carrossel" aria-roledescription="carrossel" aria-label="Ofertas em destaque" style="padding:0">
+  <div>
+    <div class="slide s1"><div class="container banner foto">
+      <div><h2>Até 20% off em notebooks</h2><p>Só esta semana, com frete grátis para todo o Brasil.</p><a class="btn btn-escuro" href="../produtos/?cat=notebooks">Ver notebooks</a></div>
+      <img class="arte-img" src="../assets/img/banners/banner-notebooks.png" alt="Notebook aberto sobre uma mesa de trabalho">
+    </div></div>
+    <div class="slide s2"><div class="container banner foto">
+      <div><h2>Celulares em 10x sem juros</h2><p>Escolha seu modelo e parcele no cartão.</p><a class="btn" href="../produtos/?cat=celulares">Ver celulares</a></div>
+      <img class="arte-img" src="../assets/img/banners/banner-celulares.jpg" alt="Pessoa usando um smartphone">
+    </div></div>
+    <div class="slide s3"><div class="container banner foto">
+      <div><h2>Black Friday: ofertas em games</h2><p>Controles, headsets e muito mais com desconto.</p><a class="btn" href="../produtos/?cat=games">Ver games</a></div>
+      <img class="arte-img" src="../assets/img/banners/banner-games.jpg" alt="Controle de videogame em primeiro plano">
+    </div></div>
+  </div>
+  <div class="ctrl">
+    <button id="car-ant" aria-label="Banner anterior">‹</button>
+    <button id="car-pausa">Pausar</button>
+    <button id="car-prox" aria-label="Próximo banner">›</button>
+    <span id="car-info" aria-live="polite" style="align-self:center"></span>
+  </div>
+</section>
+
+<section><div class="container">
+  <h2>Compre por categoria</h2>
+  <div class="tiles" id="tiles"></div>
+</div></section>
+
+<section class="alt"><div class="container">
+  <h2>Por que comprar aqui</h2>
+  <div class="grade">
+    <article class="card beneficio"><span class="ic" aria-hidden="true">🚚</span><div><h3>Frete grátis</h3><p>Em compras acima de R$ 199 para todo o país.</p></div></article>
+    <article class="card beneficio"><span class="ic" aria-hidden="true">💳</span><div><h3>Parcele em 10x</h3><p>Sem juros no cartão de crédito.</p></div></article>
+    <article class="card beneficio"><span class="ic" aria-hidden="true">🔄</span><div><h3>Troca em 30 dias</h3><p>Não gostou? Devolvemos seu dinheiro.</p></div></article>
+  </div>
+</div></section>
+
+<section><div class="container">
+  <h2>Ofertas do dia</h2>
+  <div role="tablist" id="abas" aria-label="Categorias"></div>
+  <div class="grade" id="lista"></div>
+</div></section>
+
+<section><div class="container"><div class="faixa">
+  <div><h2 style="border:0;padding:0">Crie sua conta e ganhe 10% off</h2><p style="margin:0">Válido no primeiro pedido, em qualquer produto.</p></div>
+  <a class="btn btn-escuro" href="../login/">Criar conta</a>
+</div></div></section>
+
+</main>
+<script src="../assets/js/catalogo.js"></script>
+<script src="../assets/js/home.js"></script></body></html>
